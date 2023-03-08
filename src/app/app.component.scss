@@ -1,0 +1,52 @@
+table,
+th,
+td {
+  border: 1px solid #b0b0b0 !important;
+}
+
+th {
+  min-width: 150px;
+}
+
+/*
+tr {
+  .mat-column-employeeName {
+    min-width: 120px;
+  }
+  .mat-column-employeeId {
+    min-width: 120px;
+  }
+}
+*/
+
+/*.mat-header-row, .mat-footer-row, .mat-row {
+    min-height: 30px;
+    max-height: 30px;
+}
+*/
+
+.header-row {
+  background-color: #f1f1f1;
+}
+
+.table-row {
+  /*    min-height: 30px;
+    max-height: 30px;
+*/
+  height: 36px !important;
+}
+
+.mat-header-cell,
+.mat-cell {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.highlighed-column {
+  background-color: rgb(146, 146, 233);
+}
+
+.container {
+  margin: 50px 25px;
+  padding: 50px 25px;
+}
