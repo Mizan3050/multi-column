@@ -1,14 +1,9 @@
 <div class="container">
   <table mat-table [dataSource]="myData">
-    <ng-container matColumnDef="prod">
-      <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">Prod</th>
-      <td mat-cell *matCellDef="let row">{{ row.data["col1"] }}</td>
+    <ng-container matColumnDef="product">
+      <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">Product Name</th>
+      <td mat-cell *matCellDef="let row">{{ row.data.name  }}</td>
     </ng-container>
-    <ng-container matColumnDef="stock">
-      <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">Av Stock</th>
-      <td mat-cell *matCellDef="let row">{{ row.data["col1"] }}</td>
-    </ng-container>
-
     <ng-container *ngFor="let col of allColumns">
       <ng-container [matColumnDef]="col.key">
         <th
@@ -17,7 +12,7 @@
           [attr.colspan]="col.colspan"
           [attr.rowspan]="col.rowspan"
         >
-          {{ col.key }}
+          {{ col.col_name }}
         </th>
         <td
           mat-cell

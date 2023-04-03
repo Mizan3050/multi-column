@@ -6,69 +6,78 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   myData = [
     {
       data: {
-        col1: 'row1Col1',
-        col2sub1: 'row1Col2',
-        col2sub2: 'row1Col3',
-        col3sub2: 'row1Col4',
+        name: 'row1Col1',
+        stock: 'row1Col2',
+        value: 'row1Col3',
+        stock_qty: 'row1Col4',
       },
     },
     {
       data: {
-        col1: 'row2Col1',
-        col2sub1: 'row2Col2',
-        col2sub2: 'row2Col3',
-        col3sub2: 'row2Col4',
+        name: 'row2Col1',
+        stock: 'row2Col2',
+        value: 'row2Col3',
+        stock_qty: 'row2Col4',
       },
     },
   ];
 
-  myColumns = [
-    { key: 'col2', isMulti: true }
+  mainHeaderColumns = [
+    "product",
+    "thirty",
+    "av_stock"
   ];
 
-  mainHeaderColumns = ['prod', 'stock'];
-  subHeaderColumns = ['col2sub1', 'col2sub2', 'col3sub2'];
+  subHeaderColumns = [
+    "stock",
+    "value",
+    "stock_qty"
+  ];
 
   allColumns = [
     {
-      key: "col2",
+      "key": "thirty",
+      col_name: 'thirty',
       "rowspan": 1,
       "colspan": 2
     },
     {
-      key: "col2sub1",
+      "key": "stock",
+      col_name: 'stock',
       "rowspan": 1,
       "colspan": 1
     },
     {
-      key: "col2sub2",
+      "key": "value",
+      col_name: 'value',
+      "rowspan": 1,
+      "colspan": 1
+    },
+    {
+      "key": "av_stock",
+      col_name: 'av stock',
+      "rowspan": 1,
+      "colspan": 1
+    },
+    {
+      "key": "stock_qty",
+      col_name: 'stock qty',
       "rowspan": 1,
       "colspan": 1
     }
   ];
 
-  allComplexDataCols = [];
+  allComplexDataCols = [
+    "product",
+    "stock",
+    "value",
+    "stock_qty"
+  ];
 
   columnHighlight = true;
-
-  constructor() { }
-
-  ngOnInit() {
-    // $('.mat-column-col2sub1').css('background-color', 'green');
-    this.allComplexDataCols.push(...this.mainHeaderColumns);
-
-    this.myColumns.forEach((col) => {
-      console.log(col);
-      this.mainHeaderColumns.push(col.key);
-    });
-
-    console.log(this.mainHeaderColumns);
-
-    this.allComplexDataCols.push(...this.subHeaderColumns);
-    console.log('allColumns: ', this.allColumns);
-  }
 
 }
