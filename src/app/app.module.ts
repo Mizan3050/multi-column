@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { ImageToPdfComponent } from './image-to-pdf/image-to-pdf.component';
+import { TableTreeComponent } from './table-tree/table-tree.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageToPdfComponent
+    ImageToPdfComponent,
+    TableTreeComponent
   ],
   imports: [
     BrowserModule,

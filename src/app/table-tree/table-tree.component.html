@@ -1,0 +1,19 @@
+<div class="table-container">
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr *ngFor="let d of chartofaccounts">
+      <td [style.padding-left]="d.depth * 20 + 'px'">
+        <span [class.display-node-name]="d.depth > 0">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span>{{ d.account_name }}</span>
+      </td>
+      <td>{{ d.account_type_formatted }}</td>
+      <td class="desc">{{ d.description.slice(0, 50) }}</td>
+    </tr>
+  </table>
+</div>
