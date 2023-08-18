@@ -83,5 +83,4 @@ export class ImageToPdfComponent implements OnInit {
     var dataURL = canvas.toDataURL('image/png');
     return { img: dataURL, width: canvas.width, height: canvas.height };
   }
-
 }
