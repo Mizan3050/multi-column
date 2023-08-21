@@ -16,7 +16,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     TableTreeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
