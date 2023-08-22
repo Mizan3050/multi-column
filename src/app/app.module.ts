@@ -8,12 +8,14 @@ import { MatTableModule } from '@angular/material/table';
 import { ImageToPdfComponent } from './image-to-pdf/image-to-pdf.component';
 import { TableTreeComponent } from './table-tree/table-tree.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageToPdfComponent,
-    TableTreeComponent
+    TableTreeComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
