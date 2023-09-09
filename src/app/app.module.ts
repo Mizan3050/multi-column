@@ -9,13 +9,15 @@ import { ImageToPdfComponent } from './image-to-pdf/image-to-pdf.component';
 import { TableTreeComponent } from './table-tree/table-tree.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { JsComponent } from './js/js.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageToPdfComponent,
     TableTreeComponent,
-    RxjsComponent
+    RxjsComponent,
+    JsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
