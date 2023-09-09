@@ -1,15 +1,37 @@
-import { Component } from '@angular/core';
-import { concatMap, delay, exhaustMap, mergeMap, of, switchMap, tap } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { BehaviorSubject, concatMap, delay, exhaustMap, mergeMap, Observable, of, scan, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs',
   templateUrl: './rxjs.component.html',
   styleUrls: ['./rxjs.component.scss']
 })
-export class RxjsComponent {
+export class RxjsComponent implements OnInit {
 
   arrayOfSomeNumbers: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8];
   arrayOfId = of(...this.arrayOfSomeNumbers);
+
+  newArrayObservable = new BehaviorSubject<Array<number>>(this.arrayOfSomeNumbers)
+  newArrayObservable$: Observable<Array<number>> = this.newArrayObservable.asObservable();
+
+  obsValue$ = of(null);
+
+  formControlOne = new FormControl('');
+
+
+  ngOnInit() {
+    this.formControlOne.patchValue('lol value1');
+
+    this.formControlOne.valueChanges.subscribe(v => {
+      console.log(v);
+    })
+
+    this.obsValue$ = this.newArrayObservable$.pipe(
+      scan((accumulator, currentValue) => [...accumulator, ...currentValue], []),
+      tap(console.log)
+    )
+  }
 
 
   /* emissions waits for the previous one to complete */
@@ -50,6 +72,9 @@ export class RxjsComponent {
     })
   )
 
+  updateObsArray() {
+    this.newArrayObservable.next([5, 6, 7, 8, 9])
+  }
 
   makeACall(v: number) {
     return of(v).pipe(
