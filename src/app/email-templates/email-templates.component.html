@@ -1,1 +1,7 @@
-<div *ngFor="let template of templatesArray" [innerHTML]="template | safeHtml"></div>
+<div class="email-templates">
+  <div
+  class="email-preview"
+    *ngFor="let template of templatesArray"
+    [innerHTML]="template | safeHtml"
+  ></div>
+</div>
