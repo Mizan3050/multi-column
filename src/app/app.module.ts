@@ -10,6 +10,8 @@ import { TableTreeComponent } from './table-tree/table-tree.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { JsComponent } from './js/js.component';
+import { EmailTemplatesComponent } from './email-templates/email-templates.component';
+import { PipesModule } from './pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -17,13 +19,15 @@ import { JsComponent } from './js/js.component';
     ImageToPdfComponent,
     TableTreeComponent,
     RxjsComponent,
-    JsComponent
+    JsComponent,
+    EmailTemplatesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
+    PipesModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
