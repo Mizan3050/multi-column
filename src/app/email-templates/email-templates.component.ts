@@ -11,6 +11,8 @@ export function unescapeQuotes(templateText: string) {
 })
 export class EmailTemplatesComponent {
 
-  templatesArray = templateTextArray.map(template => unescapeQuotes(template));
+  templatesArray = templateTextArray.map(template => {
+    return unescapeQuotes(template)
+  });
 
 }

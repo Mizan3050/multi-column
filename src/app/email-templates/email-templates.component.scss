@@ -1,9 +1,16 @@
 .email-templates {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   .email-preview {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 20px 0;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-radius: 4px;
   }
 }
