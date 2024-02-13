@@ -12,6 +12,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { JsComponent } from './js/js.component';
 import { EmailTemplatesComponent } from './email-templates/email-templates.component';
 import { PipesModule } from './pipes/pipes.module';
+import { EmailTemplatePreviewComponent } from './email-templates/email-template-preview/email-template-preview.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PipesModule } from './pipes/pipes.module';
     TableTreeComponent,
     RxjsComponent,
     JsComponent,
-    EmailTemplatesComponent
+    EmailTemplatesComponent,
+    EmailTemplatePreviewComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

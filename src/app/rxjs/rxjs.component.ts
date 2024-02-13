@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { BehaviorSubject, concatMap, delay, exhaustMap, mergeMap, Observable, of, scan, switchMap, tap } from 'rxjs';
+import { BehaviorSubject, concatMap, delay, exhaustMap, mergeMap, Observable, of, scan, startWith, switchMap, tap } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs',
@@ -56,7 +56,10 @@ export class RxjsComponent implements OnInit {
 
   mergeMap$ = this.arrayOfId.pipe(
     mergeMap((v) => {
-      return this.makeACall(v)
+      return this.makeACall(v).pipe(
+        startWith({ state: 'loading' }),
+        tap(console.log)
+      )
     }),
     tap((v) => {
       console.log(v);
@@ -81,7 +84,7 @@ export class RxjsComponent implements OnInit {
       delay(v * 100)
     ).pipe(
       tap((v) => {
-        console.log('call ' + v);
+        console.log('call loaded ' + v);
       })
     )
   }

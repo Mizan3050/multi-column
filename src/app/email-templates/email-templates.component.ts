@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { templateTextArray } from '../constants/email-templates.constant';
+
 
 export function unescapeQuotes(templateText: string) {
   return templateText?.replace(/\\"/g, '"') ?? '';
@@ -14,5 +15,6 @@ export class EmailTemplatesComponent {
   templatesArray = templateTextArray.map(template => {
     return unescapeQuotes(template)
   });
+
 
 }

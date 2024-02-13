@@ -1,0 +1,8 @@
+<div
+  class="email-preview"
+  #container
+  [innerHTML]="htmlText"
+  [ngStyle]="{
+    scale: container.offsetHeight > 150 ? 150 / container.offsetHeight : 1
+  }"
+></div>

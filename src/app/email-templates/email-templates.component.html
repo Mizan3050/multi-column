@@ -1,16 +1,6 @@
 <div class="email-templates">
-<!--   <div
-    class="email-preview"
+  <app-email-template-preview
     *ngFor="let template of templatesArray"
-    [innerHTML]="template | safeHtml"
-    #templateRef
-  ></div> -->
-  <iframe
-    class="email-preview"
-    *ngFor="let template of templatesArray"
-    [srcdoc]="template | safeHtml"
-    frameborder="0"
-    height="550"
-    width="400"
-  ></iframe>
+    [htmlText]="template | safeHtml"
+  ></app-email-template-preview>
 </div>
