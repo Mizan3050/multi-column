@@ -18,15 +18,12 @@ export class EmailTemplatePreviewComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    console.log({ d: this.container.nativeElement.getBoundingClientRect() });
-
     if (this.container.nativeElement.getBoundingClientRect().width > 300) {
       this.container.nativeElement.style.width = '300px';
     }
   }
 
   containerLog(container: HTMLIFrameElement) {
-    console.log({ container });
 
   }
 

@@ -1,6 +1,10 @@
 <div class="email-templates">
-  <app-email-template-preview
+<!--   <app-email-template-preview
     *ngFor="let template of templatesArray"
     [htmlText]="template | safeHtml"
-  ></app-email-template-preview>
+  ></app-email-template-preview> -->
+
+  <div [innerHTML]="lol | safeHtml"></div>
+  <router-outlet></router-outlet>
+
 </div>

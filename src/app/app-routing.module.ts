@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DynamicScreenComponent } from 'src/app/dynamic-screen/dynamic-screen.component';
 import { EmailTemplatesComponent } from './email-templates/email-templates.component';
 import { ImageToPdfComponent } from './image-to-pdf/image-to-pdf.component';
 import { JsComponent } from './js/js.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'email-templates',
     component: EmailTemplatesComponent
+  },
+  {
+    path: 'dynamic-screen',
+    component: DynamicScreenComponent
   }
 ];
 

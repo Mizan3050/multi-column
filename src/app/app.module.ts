@@ -13,6 +13,8 @@ import { JsComponent } from './js/js.component';
 import { EmailTemplatesComponent } from './email-templates/email-templates.component';
 import { PipesModule } from './pipes/pipes.module';
 import { EmailTemplatePreviewComponent } from './email-templates/email-template-preview/email-template-preview.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DynamicScreenComponent } from 'src/app/dynamic-screen/dynamic-screen.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { EmailTemplatePreviewComponent } from './email-templates/email-template-
     JsComponent,
     EmailTemplatesComponent,
     EmailTemplatePreviewComponent,
+    DynamicScreenComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -30,6 +33,8 @@ import { EmailTemplatePreviewComponent } from './email-templates/email-template-
     BrowserAnimationsModule,
     MatTableModule,
     PipesModule,
+    FormsModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

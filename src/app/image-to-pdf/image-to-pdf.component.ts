@@ -54,13 +54,13 @@ export class ImageToPdfComponent implements OnInit {
         this.doc.addPage();
         count += 1;
         if (this.images.length === count) {
-          console.log('Download');
+
         }
       }
       newImage.onerror = () => {
         count += 1;
         if (this.images.length === count) {
-          console.log('Download');
+
         }
       }
     }

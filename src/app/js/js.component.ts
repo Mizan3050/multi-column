@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 
 
 function printName() {
-  console.log(this.firstName + ' ' + this.lastName)
+
 }
 
 (Function.prototype as any).myBind = function (...args) {
   let obj = this;
   // this will point to the method to which myBind has been called
-  console.log(obj)
+
   return function () {
     obj.call(args[0])
   }

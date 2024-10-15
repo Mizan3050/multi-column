@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="btn-container">
+    View {{isMobile ? 'Mobile' : 'Desktop'}}
+    <button (click)="mobileView()">Mobile View</button>
+    <button (click)="desktopView()">Desktop View</button>
+  </div>
+  <div class="display-screen" #displayScreen></div>
+
+  <input [(ngModel)]="colorText" />
+  <button (click)="updateCss()">Update</button>
+</div>
+
+<!-- <section>
+  <div class="main">
+    <div class="sub-main and-some with-some" id="lol-1">
+      <span>
+        <p>LOL</p>
+      </span>
+    </div>
+  </div>
+</section> -->

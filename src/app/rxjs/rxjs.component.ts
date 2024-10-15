@@ -24,7 +24,6 @@ export class RxjsComponent implements OnInit {
     this.formControlOne.patchValue('lol value1');
 
     this.formControlOne.valueChanges.subscribe(v => {
-      console.log(v);
     })
 
     this.obsValue$ = this.newArrayObservable$.pipe(
@@ -38,9 +37,6 @@ export class RxjsComponent implements OnInit {
   concatMapRes$ = this.arrayOfId.pipe(
     concatMap((v) => {
       return this.makeACall(v)
-    }),
-    tap((v) => {
-      console.log(v);
     })
   )
 
@@ -48,30 +44,20 @@ export class RxjsComponent implements OnInit {
   switchMapRes$ = this.arrayOfId.pipe(
     switchMap((v) => {
       return this.makeACall(v)
-    }),
-    tap((v) => {
-      console.log(v);
     })
   )
 
   mergeMap$ = this.arrayOfId.pipe(
     mergeMap((v) => {
       return this.makeACall(v).pipe(
-        startWith({ state: 'loading' }),
-        tap(console.log)
+        startWith({ state: 'loading' })
       )
-    }),
-    tap((v) => {
-      console.log(v);
     })
   )
 
   exhaustMap$ = this.arrayOfId.pipe(
     exhaustMap((v) => {
       return this.makeACall(v)
-    }),
-    tap((v) => {
-      console.log(v);
     })
   )
 
@@ -82,10 +68,6 @@ export class RxjsComponent implements OnInit {
   makeACall(v: number) {
     return of(v).pipe(
       delay(v * 100)
-    ).pipe(
-      tap((v) => {
-        console.log('call loaded ' + v);
-      })
     )
   }
 }
